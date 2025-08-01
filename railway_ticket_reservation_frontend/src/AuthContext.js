@@ -4,9 +4,18 @@ const AuthContext = createContext();
 
 const STORAGE_KEY = "rrts_user";
 
-// PUBLIC_INTERFACE
+/**
+ * PUBLIC_INTERFACE
+ * Custom hook for accessing authentication context.
+ * Throws a clear error if used outside of an AuthProvider.
+ */
+ // PUBLIC_INTERFACE
 export function useAuth() {
-  return useContext(AuthContext);
+  const context = useContext(AuthContext);
+  if (context === undefined) {
+    throw new Error("useAuth() must be used within an <AuthProvider>.");
+  }
+  return context;
 }
 
 // PUBLIC_INTERFACE

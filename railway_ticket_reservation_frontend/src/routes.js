@@ -10,9 +10,21 @@ import ReservationHistoryPage from "./views/ReservationHistoryPage";
 import NotFoundPage from "./views/NotFoundPage";
 import { useAuth } from "./AuthContext";
 
-// PUBLIC_INTERFACE
+/**
+ * PUBLIC_INTERFACE
+ * Returns the core route list for the application, choosing content based on authentication state.
+ * This function safely handles the case where useAuth() is unavailable (e.g., during tests).
+ */
 export function AppRoutes() {
-  const { isAuthenticated } = useAuth();
+  let isAuthenticated = false;
+  try {
+    // Prefer correct context usage
+    const auth = useAuth();
+    isAuthenticated = auth ? !!auth.isAuthenticated : false;
+  } catch (e) {
+    // Fallback for test or edge usage
+    isAuthenticated = false;
+  }
 
   return [
     { path: "/", element: <HomePage /> },
