@@ -1,0 +1,4 @@
+{
+    "command": "npm install",
+    "working_directory": "/home/kavia/workspace/code-generation/railway-ticket-reservation-system-93308/railway_ticket_reservation_frontend"
+}
