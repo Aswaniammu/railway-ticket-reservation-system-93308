@@ -1,0 +1,131 @@
+.layout-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+}
+
+.nav-header {
+  padding: 0;
+  box-shadow: 0 1px 4px rgba(20, 20, 20, 0.04);
+  border-bottom: 2px solid var(--border-color, #ececec);
+  z-index: 90;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 24px;
+  min-height: 64px;
+}
+
+.nav-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #1976d2;
+  letter-spacing: 2px;
+  align-items: center;
+  display: flex;
+}
+.brand-link {
+  text-decoration: none;
+  color: #1976d2;
+  display: flex;
+  align-items: center;
+}
+.brand-icon {
+  font-size: 1.35em;
+  margin-right: 6px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  font-size: 1.04em;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: border 0.2s, color 0.15s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: #1976d2;
+  border-bottom: 2px solid #1976d2;
+}
+
+.nav-logout-btn {
+  background: #fff;
+  border: 1.5px solid #1976d2;
+  color: #1976d2;
+  border-radius: 4px;
+  font-size: 1em;
+  padding: 3px 14px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  margin-left: 8px;
+}
+
+.nav-logout-btn:hover {
+  background: #1976d2;
+  color: #fff;
+}
+.nav-user {
+  color: #9315c1;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+.main-section {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 32px 16px 30px 16px;
+  box-sizing: border-box;
+  background: inherit;
+}
+
+.footer {
+  width: 100%;
+  padding: 14px 0 10px 0;
+  color: #757575;
+  text-align: center;
+  font-size: 1em;
+  background: #ececec;
+  min-height: 36px;
+}
+
+@media (max-width: 767px) {
+  .main-section {
+    padding: 18px 4vw 20px 4vw;
+  }
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: unset;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 13px;
+    padding: 9px 0 7px 0;
+    font-size: 1.06em;
+    align-items: flex-start;
+  }
+  .nav-header {
+    min-height: unset;
+  }
+}
